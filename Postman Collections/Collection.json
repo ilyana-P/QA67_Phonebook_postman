@@ -787,7 +787,7 @@
 							"response": []
 						},
 						{
-							"name": "New Request",
+							"name": "DeleteContactNotFound_404",
 							"event": [
 								{
 									"listen": "test",
@@ -822,6 +822,18 @@
 								],
 								"url": "{{BaseUrl}}/v1/contacts/7908e474-e7f2-4420-9a13-8e668255dd3r",
 								"description": "Expected result: Status code 404 for non existing contact with valid id\n\nActual result: Status code 400 Bad Request"
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteContactNoAuth_401",
+							"id": "0e648795-0d93-4ba9-a8b5-0fe38c8e7b90",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": []
 							},
 							"response": []
 						}
