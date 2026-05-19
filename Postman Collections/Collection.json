@@ -788,13 +788,40 @@
 						},
 						{
 							"name": "New Request",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "bde70d5a-db9d-4950-ad06-5d6cd8353138",
+										"exec": [
+											"pm.test(\"Status code is 404\", function () {",
+											"    pm.response.to.have.status(404);",
+											"});",
+											"pm.test(\"Body matches string\", function () {",
+											"    pm.expect(pm.response.text()).to.include(\"not found\");",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
 							"id": "93089964-00cc-4cb3-9097-61400dabd7dd",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
 							"request": {
-								"method": "GET",
-								"header": []
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": "{{BaseUrl}}/v1/contacts/7908e474-e7f2-4420-9a13-8e668255dd3r",
+								"description": "Expected result: Status code 404 for non existing contact with valid id\n\nActual result: Status code 400 Bad Request"
 							},
 							"response": []
 						}
