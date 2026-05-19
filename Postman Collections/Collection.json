@@ -359,7 +359,9 @@
 											"        if (data.contacts && data.contacts.length > 0) {",
 											"            let contactId = data.contacts[0].id;",
 											"            pm.environment.set(\"id\", contactId)",
-											"            console.log(\"Contact ID set to: \", contactId)",
+											"            console.log(\"Contact ID set to: \", contactId);",
+											"    }else{",
+											"            console.log(\"No contacts found.\")",
 											"    }",
 											"}",
 											"})"
