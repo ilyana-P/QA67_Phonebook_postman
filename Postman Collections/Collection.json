@@ -746,6 +746,18 @@
 								"description": "expected result: 404 Not Found\n\nactual result: 400 Bad request with message:\"Contact with id: 9999 not found in your contacts!\""
 							},
 							"response": []
+						},
+						{
+							"name": "New Request",
+							"id": "322703e0-1e6d-40cc-83b4-e95cfa94575b",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
 						}
 					],
 					"id": "13add75c-4c4d-4b26-8d34-d49c6c642c72",
