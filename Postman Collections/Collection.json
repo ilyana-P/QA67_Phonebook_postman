@@ -820,7 +820,7 @@
 										"type": "text"
 									}
 								],
-								"url": "{{BaseUrl}}/v1/contacts/7908e474-e7f2-4420-9a13-8e668255dd3r",
+								"url": "{{BaseUrl}}/v1/contacts/7908e474-e7f2-4420-9a13-8e668255dd3b",
 								"description": "Expected result: Status code 404 for non existing contact with valid id\n\nActual result: Status code 400 Bad Request"
 							},
 							"response": []
@@ -860,10 +860,6 @@
 										"disabled": true
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"name\": \"{{name}}\",\n  \"lastName\": \"{{lastName}}\",\n  \"email\": \"{{email}}\",\n  \"phone\": \"{{phone}}\",\n  \"address\": \"{{address}}\",\n  \"description\": \"{{description}}\"\n}"
-								},
 								"url": "{{BaseUrl}}/v1/contacts/{id}",
 								"description": "Expected Result: 401 Unauthorized\n\nActual result: 403 Forbidden"
 							},
