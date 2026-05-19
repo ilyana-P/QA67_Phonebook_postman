@@ -340,6 +340,20 @@
 										"packages": {},
 										"requests": {}
 									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "09e23c4e-ca8b-4e10-94c1-35da46df21ee",
+										"exec": [
+											"pm.sendRequest({",
+											"    url: pm.environment.get(\"BaseURI\") + \"/v1/contacts/\" + pm.environment.get(\"id\"),",
+											"})"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
 								}
 							],
 							"id": "e0c56d44-0ab9-43eb-a499-d2c25c2472bc",
