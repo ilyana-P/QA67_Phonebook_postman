@@ -827,7 +827,51 @@
 						},
 						{
 							"name": "DeleteContactNoAuth_401",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "67a1b37a-9c35-4372-96a1-bc88717187de",
+										"exec": [
+											"pm.test(\"Status code is 401\", function () {",
+											"    pm.response.to.have.status(401);",
+											"});",
+											"pm.test(\"Status code name has string\", function () {",
+											"    pm.response.to.have.status(\"Unauthorized\");",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
 							"id": "0e648795-0d93-4ba9-a8b5-0fe38c8e7b90",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"{{name}}\",\n  \"lastName\": \"{{lastName}}\",\n  \"email\": \"{{email}}\",\n  \"phone\": \"{{phone}}\",\n  \"address\": \"{{address}}\",\n  \"description\": \"{{description}}\"\n}"
+								},
+								"url": "{{BaseUrl}}/v1/contacts/{id}",
+								"description": "Expected Result: 401 Unauthorized\n\nActual result: 403 Forbidden"
+							},
+							"response": []
+						},
+						{
+							"name": "New Request",
+							"id": "77465691-ba55-4fd3-a3aa-6ac6eb8bf7a7",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
