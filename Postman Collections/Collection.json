@@ -748,8 +748,47 @@
 							"response": []
 						},
 						{
-							"name": "New Request",
+							"name": "DeleteContactErrorFormat_400",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "444df7fb-1b5d-44e8-9265-2694d9d6a70a",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {",
+											"    pm.response.to.have.status(400);",
+											"});",
+											"pm.test(\"Response body contains error\", function () {",
+											"    pm.expect(pm.response.text()).to.include(\"message\");",
+											"});",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
 							"id": "322703e0-1e6d-40cc-83b4-e95cfa94575b",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": "{{BaseUrl}}/v1/contacts/§aldcsfaw"
+							},
+							"response": []
+						},
+						{
+							"name": "New Request",
+							"id": "93089964-00cc-4cb3-9097-61400dabd7dd",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
