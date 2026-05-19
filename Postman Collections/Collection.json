@@ -870,14 +870,35 @@
 							"response": []
 						},
 						{
-							"name": "New Request",
+							"name": "DeleteAllContactNoAuth_401",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "a3fa40b7-366a-4b5a-a527-baed42bd1099",
+										"exec": [
+											"pm.test(\"Status code is 401\", function () {",
+											"    pm.response.to.have.status(401);",
+											"});",
+											"",
+											"pm.test(\"Status code name has string\", function () {",
+											"    pm.response.to.have.status(\"Unauthorized\");",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
 							"id": "77465691-ba55-4fd3-a3aa-6ac6eb8bf7a7",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
 							"request": {
-								"method": "GET",
-								"header": []
+								"method": "DELETE",
+								"header": [],
+								"url": "{{BaseUrl}}/v1/contacts/clear"
 							},
 							"response": []
 						}
